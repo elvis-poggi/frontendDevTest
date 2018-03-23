@@ -1,10 +1,9 @@
 import React from 'react'
 
 const Navbar = (props = {}) => {
-  const { data = {} } = props
   return (
     <div>
-      <h1>{data.name}Asdrubale</h1> <h2>LOREM IPSUM DOLOR</h2>
+      <h1>Asdrubale</h1> <h2>LOREM</h2> <h2>IPSUM</h2> <h2>DOLOR</h2>
     </div>
   )
 }
