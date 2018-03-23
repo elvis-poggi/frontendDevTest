@@ -3,3 +3,10 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+pre{
+  background: grey;
+  padding: 1rem;
+  color: white;
+  text-align: left;
+}
