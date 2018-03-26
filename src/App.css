@@ -3,10 +3,7 @@
     background-image: url(https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png);
     background-repeat: no-repeat;
     background-size: contain;
-    position: absolute;
-    top: 100px;
     font-family: 'Roboto Slab', serif;
-    overflow: hidden;  
 }
 
 .App-logo {
@@ -88,6 +85,8 @@ html, body, .app {
   top: 0;
   width: 100%;
   background: white;
+  transition-property: top;
+  transition-duration: 0.33333333s;
 }
 
 .navbar h1, h2{
@@ -112,63 +111,6 @@ html, body, .app {
   text-align: center;
 }
 
-.articles {
-  text-align: left;
-  /* margin: auto; */
-  /* background: white; */
-  /* border-radius: 15px; */
-  /* display: block; */
-  /* width: auto; */
-  margin-top: 660px;
-}
-
-.mainArticle {
-  float: left;
-  width: 50%;
-  padding-left: 85px;
-  margin-right: 90px;
-  max-width: 926px;
-}
-
-
-.sideArticle {
-  float: left;
-  width: 25%;
-  background: yellow;
-  margin-bottom: 100px;
-  border-radius: 15px;
-  padding: 48px;
-  margin-top: -70px;
-  max-width: 333px;
-}
-
-.sideArticle button {
-  padding: 20px 90px;
-  margin-left: 25px;
-  background: yellow;
-  border: solid 1px black;
-  margin-top: 20px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.article:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.mainArticle .gallery img {
-  height: 100%;
-  padding: 10px;
-  border-radius: 16px;
-}
 
 .popup_inner .header {
   background: yellow;
@@ -258,23 +200,73 @@ html, body, .app {
   margin-top: 15px;
 }
 
-.hidden {
-  visibility: hidden;
+#navbar.over {
+  top: -120px;
 }
 
 
 .articlesWrapper {
-  width: 70%;
-  background: white;
+  width: 90%;
   margin: 0 auto;
-  border-radius: 15px;
-  margin-top: 660px;
-  display: block;
+  padding-top: 660px;
+  display: flex;
+  transition-property: width;
+  transition-duration: 0.5s;
 }
 
-.fullScreen {
-  width: auto;
+#articles.over {
+  width: 100%;
   border-radius: 0;
-  margin: 0;
-  display: block;
+  background: white;  
+}
+
+.articles {
+  border-radius: 15px;
+  text-align: left;
+  margin: 0 auto;
+  background: white;
+}
+
+.mainArticle {
+  float: left;
+  width: 50%;
+  padding-left: 85px;
+  margin-right: 90px;
+  max-width: 926px;
+}
+
+
+.sideArticle {
+  float: left;
+  width: 25%;
+  background: yellow;
+  margin-bottom: 100px;
+  border-radius: 15px;
+  padding: 48px;
+  margin-top: -70px;
+  max-width: 333px;
+}
+
+.sideArticle button {
+  padding: 20px 90px;
+  margin-left: 25px;
+  background: yellow;
+  border: solid 1px black;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mainArticle .gallery img {
+  height: 100%;
+  padding: 10px;
+  border-radius: 16px;
 }
