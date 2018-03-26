@@ -1,5 +1,12 @@
+
 .App {
-  text-align: center;
+    background-image: url(https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 100px;
+    font-family: 'Roboto Slab', serif;
+    overflow: hidden;  
 }
 
 .App-logo {
@@ -56,6 +63,8 @@ html, body, .app {
   bottom: 5%;
   margin: auto;
   background: white;
+  border-radius: 15px; 
+  background: yellow; 
 }
 
 .popup_inner img {
@@ -66,12 +75,25 @@ html, body, .app {
 .owner img {
   width: 50px;
   border-radius: 50px;
+  vertical-align: middle;
+}
+
+.owner span {
+  color: grey;
+  padding-left: 10px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
 }
 
 .navbar h1, h2{
     display: inline-block;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .navbar h1 {
@@ -86,10 +108,173 @@ html, body, .app {
 .navbar .buttons {
   display: inline-block;
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
   text-align: center;
 }
 
-.navbar {
+.articles {
+  text-align: left;
+  /* margin: auto; */
+  /* background: white; */
+  /* border-radius: 15px; */
+  /* display: block; */
+  /* width: auto; */
+  margin-top: 660px;
+}
+
+.mainArticle {
+  float: left;
+  width: 50%;
+  padding-left: 85px;
+  margin-right: 90px;
+  max-width: 926px;
+}
+
+
+.sideArticle {
+  float: left;
+  width: 25%;
   background: yellow;
+  margin-bottom: 100px;
+  border-radius: 15px;
+  padding: 48px;
+  margin-top: -70px;
+  max-width: 333px;
+}
+
+.sideArticle button {
+  padding: 20px 90px;
+  margin-left: 25px;
+  background: yellow;
+  border: solid 1px black;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.mainArticle .gallery img {
+  height: 100%;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.popup_inner .header {
+  background: yellow;
+  padding: 10px;
+  font-size: 30px;
+  padding-left: 190px;
+  font-weight: bold;
+  padding-top: 150px;
+  padding-bottom: 120px;
+  border-radius: 15px;
+}
+
+.popup_inner .gallery {
+  padding-top: 100px;
+  padding-left: 170px;
+  height: 350px;
+  background: white;
+  overflow: hidden;
+  padding-bottom: 15px;
+  border-radius: 15px;
+}
+
+.popup_inner .gallery img {
+  padding: 15px;
+  border-radius: 25px;
+}
+
+
+.gallery {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  }
+
+.gallery .img:nth-child(1),
+.gallery .img:nth-child(4) {
+  order: 0;
+  flex: 0 1 100%;
+  align-self: auto;
+}
+
+.gallery .img {
+  order: 0;
+  flex: 0 1 45%;
+  align-self: auto;
+}
+
+.gallery img,
+.gallery .img {
+  height:45%;
+  align-content: space-around;
+}
+
+.gallery .img:nth-child(2),
+.gallery .img:nth-child(5) {
+  margin-bottom: 20px;
+}
+
+.body {
+  border-bottom: solid 2px #d8d8d896;
+  padding-bottom: 35px;
+  
+}
+
+.body span {
+  color: grey;  
+}
+
+.header {
+  margin-bottom: 35px;
+}
+
+.header h2{
+  margin-bottom: 0px;
+}
+
+.owner {
+  padding-top: 35px;
+}
+
+.reactions {
+  float: right;
+  margin-top: 15px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+.articlesWrapper {
+  width: 70%;
+  background: white;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-top: 660px;
+  display: block;
+}
+
+.fullScreen {
+  width: auto;
+  border-radius: 0;
+  margin: 0;
+  display: block;
 }

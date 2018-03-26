@@ -32,22 +32,47 @@ class App extends Component {
     .catch(err => console.error(err))
   }
 
+  componentDidMount () {
+    let active = false
+    window.onscroll = function () {
+      if (!active && window.pageYOffset > 480) {
+        const nav = document.getElementById('navbar')
+        window.active = true
+        nav.classList.add('hidden')
+        const articles = document.getElementById('articles')
+        articles.classList.add('fullScreen')
+      } else {
+        if (!active && window.pageYOffset < 480) {
+          const nav = document.getElementById('navbar')
+          window.active = false
+          nav.classList.remove('hidden')
+          const articles = document.getElementById('articles')
+          articles.classList.remove('fullScreen')
+        }
+      }
+    }
+  }
   render () {
     const { data = [] } = this.state
     const [first = {}, ...list] = data
+    if (!data.length) return null
     return (
       <div className='App'>
         <Navbar />
-        <MainArticle {...first} />
-        {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} />)}
-        <button onClick={() => this.togglePopup()}>show popup</button>
-        {this.state.showPopup
+        <div className='articlesWrapper' id='articles'>
+          <div className='articles'>
+            <MainArticle {...first} className='column' />
+            {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} className='column' />)}
+            <button className='hidden'>show popup</button>
+            {this.state.showPopup
           ? <Popup
             data={this.state.popupData}
             closePopup={() => this.togglePopup()}
           />
           : null
         }
+          </div>
+        </div>
       </div>
     )
   }
