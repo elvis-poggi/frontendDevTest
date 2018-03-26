@@ -7,9 +7,13 @@ const Popup = (props = {}) => {
   return (
     <div className='popup'>
       <div className='popup_inner'>
-        <p>{heading}</p>
-        {images.map((image) => <img src={image.url} alt={image.type} key={image.id} />)}
-        <button onClick={closePopup}>close me</button>
+        <div className='header'>
+          <p>{heading}</p>
+        </div>
+        <div className='gallery'>
+          {images.map((image) => <img src={image.url} alt={image.type} key={image.id} />)}
+        </div>
+        <button onClick={closePopup}>click here</button>
       </div>
     </div>
   )

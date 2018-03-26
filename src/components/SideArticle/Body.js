@@ -5,7 +5,6 @@ const Body = (props = {}) => {
 
   return (
     <div>
-      <strong>Body</strong>
       <span> {description}</span>
     </div>
   )

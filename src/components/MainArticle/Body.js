@@ -4,8 +4,7 @@ const Body = (props = {}) => {
   const { description } = props
 
   return (
-    <div>
-      <strong>Body</strong>
+    <div className='body'>
       <span>
         {description}
       </span>

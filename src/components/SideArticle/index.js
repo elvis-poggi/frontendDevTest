@@ -1,32 +1,31 @@
 import React from 'react'
-import Debug from '../Debug'
+// import Debug from '../Debug'
 import Header from './Header'
 import Body from './Body'
-import Footer from './Footer'
+// import Footer from './Footer'
 
 const SideArticle = (props = {}) => {
   const {
     heading,
     subheading,
     description,
-    owner_id,
+    /*owner_id,
     category_id,
     created_at,
     tags,
     meta,
-    icons,
+    icons, */
     toggle,
     id
    } = props
 
   return (
-    <div>
-      <strong>SideArticle</strong>
-      <Debug {...props} subtitle={subheading} />
+    <div className='sideArticle'>
+      {/* <Debug {...props} subtitle={subheading} /> */}
       <Header title={heading} subtitle={subheading} />
       <Body description={description} />
-      <Footer owner_id={owner_id} category_id={category_id} created_at={created_at} tags={tags} meta={meta} icons={icons} />
-      <button onClick={() => toggle(id)}> Open Popup </button>
+      {/* <Footer owner_id={owner_id} category_id={category_id} created_at={created_at} tags={tags} meta={meta} icons={icons} /> */}
+      <button onClick={() => toggle(id)}> Clicca qui </button>
     </div>
   )
 }

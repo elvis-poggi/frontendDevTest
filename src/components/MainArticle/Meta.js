@@ -1,17 +1,12 @@
 import React from 'react'
-import Debug from '../Debug'
+// import Debug from '../Debug'
+import Owner from './Owner'
 
 const Meta = (props = {}) => {
-  const { ownerId, categoryId, createdAt, tags, meta, icons } = props
+  const { ownerId, categoryId, createdAt, tags } = props
   return (
     <div>
-      <strong>Meta</strong>
-      <Debug ownerId={ownerId} />
-      <Debug categoryId={categoryId} />
-      <Debug createdAt={createdAt} />
-      <Debug tags={tags} />
-      <Debug meta={meta} />
-      <Debug icons={icons} />
+      <Owner ownId={ownerId} catId={categoryId} tags={tags} createdAt={createdAt} />
     </div>
   )
 }
