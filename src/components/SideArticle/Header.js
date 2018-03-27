@@ -1,11 +1,13 @@
 import React from 'react'
-// import Debug from '../Debug'
 
 const Header = (props = {}) => {
   const { title, subtitle } = props
+  const headerStyle = {
+    textAlign: 'left'
+  }
+
   return (
-    <div>
-      {/* <Debug data={props} /> */}
+    <div style={headerStyle}>
       <h2>{subtitle}</h2>
       <h1>{title}</h1>
     </div>

@@ -1,31 +1,42 @@
 import React from 'react'
-// import Debug from '../Debug'
 import Header from './Header'
 import Body from './Body'
-// import Footer from './Footer'
 
 const SideArticle = (props = {}) => {
   const {
     heading,
     subheading,
     description,
-    /*owner_id,
-    category_id,
-    created_at,
-    tags,
-    meta,
-    icons, */
     toggle,
     id
    } = props
+  const sideArticleStyle = {
+    float: 'left',
+    width: '230px',
+    backgroundColor: 'yellow',
+    marginBottom: '100px',
+    borderRadius: '15px',
+    padding: '48px',
+    marginTop: '-70px',
+    maxWidth: '333px',
+    textAlign: 'center'
+  }
+  const buttonStyle = {
+    padding: '20px 60px',
+    backgroundColor: 'yellow',
+    border: 'solid 1px black',
+    marginTop: '20px',
+    borderRadius: '5px',
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+    fontSize: '16px'
+  }
 
   return (
-    <div className='sideArticle'>
-      {/* <Debug {...props} subtitle={subheading} /> */}
+    <div style={sideArticleStyle}>
       <Header title={heading} subtitle={subheading} />
       <Body description={description} />
-      {/* <Footer owner_id={owner_id} category_id={category_id} created_at={created_at} tags={tags} meta={meta} icons={icons} /> */}
-      <button onClick={() => toggle(id)}> Clicca qui </button>
+      <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
     </div>
   )
 }

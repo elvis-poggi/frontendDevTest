@@ -45,14 +45,28 @@ class App extends Component {
   render () {
     const { data = [] } = this.state
     const [first = {}, ...list] = data
+    const appStyle = {
+      background: 'url(https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png) 0 110px',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+      fontFamily: `'Roboto Slab', serif`
+    }
+    const articlesStyle = {
+      width: '1280px',
+      margin: '0 auto',
+      textAlign: 'left',
+      backgroundColor: '#fff',
+      borderRadius: '15px'
+    }
+
     if (!data.length) return null
     return (
-      <div className='App'>
+      <div style={appStyle}>
         <Navbar />
         <div className='articlesWrapper' id='articles'>
-          <div className='articles'>
+          <div style={articlesStyle}>
             <MainArticle {...first} className='column' />
-            <div className='sidebar'>
+            <div>
               {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} className='column' />)}
             </div>
             <Popup
