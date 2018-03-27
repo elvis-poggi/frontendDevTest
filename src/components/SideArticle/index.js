@@ -38,7 +38,7 @@ const SideArticle = (props = {}) => {
       offsetYMax='90px'
       offsetYMin='-190px'
       slowerScrollRate
-      tag='sideArticle'
+      tag='div'
     >
       <div style={sideArticleStyle}>
         <Header title={heading} subtitle={subheading} />
