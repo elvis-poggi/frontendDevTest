@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Body from './Body'
+import { Parallax } from 'react-scroll-parallax'
 
 const SideArticle = (props = {}) => {
   const {
@@ -33,11 +34,19 @@ const SideArticle = (props = {}) => {
   }
 
   return (
-    <div style={sideArticleStyle}>
-      <Header title={heading} subtitle={subheading} />
-      <Body description={description} />
-      <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
-    </div>
+    <Parallax
+      className='custom-class'
+      offsetYMax='90px'
+      offsetYMin='0px'
+      slowerScrollRate
+      tag='sideArticle'
+    >
+      <div style={sideArticleStyle}>
+        <Header title={heading} subtitle={subheading} />
+        <Body description={description} />
+        <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
+      </div>
+    </Parallax>
   )
 }
 
