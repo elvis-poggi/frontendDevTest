@@ -18,7 +18,6 @@ const SideArticle = (props = {}) => {
     marginBottom: '100px',
     borderRadius: '15px',
     padding: '48px',
-    marginTop: '-70px',
     maxWidth: '333px',
     textAlign: 'center'
   }
@@ -37,7 +36,7 @@ const SideArticle = (props = {}) => {
     <Parallax
       className='custom-class'
       offsetYMax='90px'
-      offsetYMin='0px'
+      offsetYMin='-190px'
       slowerScrollRate
       tag='sideArticle'
     >

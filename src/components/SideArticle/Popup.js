@@ -6,15 +6,14 @@ const Popup = (props = {}) => {
   const openClass = isOpen ? 'open' : ''
 
   return (
-    <div className={`popup ${openClass}`}>
+    <div className={`popup ${openClass}`} onClick={closePopup}>
       <div className='popup_inner'>
         <div className='header'>
-          <p>{heading}</p>
+          <p className={`${openClass}`}>{heading}</p>
         </div>
         <div className={`gallery ${openClass}`}>
           {images.map((image) => <img src={image.url} alt={image.type} key={image.id} />)}
         </div>
-        <button onClick={closePopup}>click here</button>
       </div>
     </div>
   )
