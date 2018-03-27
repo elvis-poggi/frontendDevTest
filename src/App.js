@@ -7,7 +7,6 @@ import Navbar from './components/Navbar'
 import { scrollMonitor } from './utils.js'
 
 // const API_URL = 'http://18.195.225.57/articles.php'
-console.log('running in ', process.env.NODE_ENV)
 const API_URL = process.env.NODE_ENV
   ? 'http://172.17.0.2/api/articles.php'
   : '/api/articles.php'
