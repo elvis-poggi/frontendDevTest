@@ -6,7 +6,11 @@ import Popup from './components/SideArticle/Popup'
 import Navbar from './components/Navbar'
 import { scrollMonitor } from './utils.js'
 
-const API_URL = 'http://18.195.225.57/articles.php'
+// const API_URL = 'http://18.195.225.57/articles.php'
+console.log('running in ', process.env.NODE_ENV)
+const API_URL = process.env.NODE_ENV
+  ? 'http://172.17.0.2/api/articles.php'
+  : '/api/articles.php'
 
 class App extends Component {
   constructor (props) {
@@ -59,22 +63,24 @@ class App extends Component {
       borderRadius: '15px'
     }
 
-    if (!data.length) return null
     return (
       <div style={appStyle}>
         <Navbar />
         <div className='articlesWrapper' id='articles'>
-          <div style={articlesStyle}>
-            <MainArticle {...first} className='column' />
-            <div>
-              {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} className='column' />)}
+          {(!data.length)
+            ? <div>No Articles found.</div>
+            : <div style={articlesStyle}>
+              <MainArticle {...first} className='column' />
+              <div>
+                {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} className='column' />)}
+              </div>
+              <Popup
+                data={this.state.popupData}
+                closePopup={() => this.togglePopup()}
+                isOpen={this.state.showPopup}
+                  />
             </div>
-            <Popup
-              data={this.state.popupData}
-              closePopup={() => this.togglePopup()}
-              isOpen={this.state.showPopup}
-              />
-          </div>
+          }
         </div>
       </div>
     )
