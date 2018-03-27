@@ -37,8 +37,8 @@ class App extends Component {
     // let active = false
 
     window.onscroll = () => {
-      scrollMonitor(480, 'navbar')
-      scrollMonitor(600, 'articles')
+      scrollMonitor(440, 'navbar')
+      scrollMonitor(590, 'articles')
     }
   }
 
@@ -55,13 +55,11 @@ class App extends Component {
             <div className='sidebar'>
               {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} className='column' />)}
             </div>
-            {this.state.showPopup
-              ? <Popup
-                data={this.state.popupData}
-                closePopup={() => this.togglePopup()}
+            <Popup
+              data={this.state.popupData}
+              closePopup={() => this.togglePopup()}
+              isOpen={this.state.showPopup}
               />
-              : null
-            }
           </div>
         </div>
       </div>
