@@ -35,10 +35,9 @@ const SideArticle = (props = {}) => {
   return (
     <Parallax
       className='custom-class'
-      offsetYMax='90px'
+      offsetYMax='80px'
       offsetYMin='-190px'
       slowerScrollRate
-      tag='div'
     >
       <div style={sideArticleStyle}>
         <Header title={heading} subtitle={subheading} />
