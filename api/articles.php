@@ -2,17 +2,27 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset-UTF-8");
 
-// TODO
-// - remove unnecessary fields from JSON
+function getArticles() {
+  $url = "http://18.195.225.57/articles.php";
+  
+  $client = curl_init($url);
+  curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
+  $response = curl_exec($client);
+  curl_close($client);
+  
+  return json_decode($response, true);
+}
 
-$url = "http://18.195.225.57/articles.php";
+$articles = getArticles();
 
-$client = curl_init($url);
-curl_setopt($client,true,true);
-$response = curl_exec($client);
+$result = array_map(function($a) {
+  unset($a['owner_id']);
+  unset($a['category_id']);
+  unset($a['created_at']);
+  unset($a['tags']);
+  unset($a['meta']);  
+  return $a;
+}, $articles);
 
-$result = json_decode($response);
-
-echo $result->data; 
-
+echo json_encode($result);
 ?>
