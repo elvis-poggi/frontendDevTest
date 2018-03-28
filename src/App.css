@@ -34,14 +34,16 @@
 }
 
 .popup_inner .header p.open {
-  margin-top: 0;
+  position: relative;
+  top: 0;
   opacity: 1;  
 }
 
 .popup_inner .header p {
-  margin-top: 200px;
+  position: relative;
+  top: 180px;
   opacity: 0;
-  transition-property: opacity;
+  transition-property: opacity position;
   transition-duration: 1.5s;
 }
 
@@ -51,7 +53,6 @@
   left: 180px;
   top: 170px;
   position: relative;
-  transition-delay: 7s;
 }
 
 .popup_inner .gallery {
@@ -59,8 +60,9 @@
   background: white;
   overflow: hidden;
   border-radius: 15px;
-  transition-property: height;
-  transition-duration: 0.5s;
+  transition-property: height opacity;
+  transition-duration: 0.7s;
+  opacity: 0;
 }
 
 .popup_inner .gallery.open {
@@ -68,6 +70,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  opacity: 1;
 }
 
 .popup_inner .gallery img {
@@ -134,7 +137,6 @@
   flex: 0 1 45%;
   align-self: auto;
 }
-
 .gallery img,
 .gallery .img {
   height:45%;
@@ -195,4 +197,13 @@
 }
 .mainArticle .header {
   width: 641.25px;
+}
+@media  screen and (min-width: 1920px) {
+  .gallery img,
+  .gallery .img{
+    height: 60%;
+  }
+  .mainArticle .gallery .img {
+    height: 45%;
+  }
 }
