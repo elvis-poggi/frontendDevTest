@@ -4,13 +4,13 @@ import Body from './Body'
 import Footer from './Footer'
 
 const MainArticle = (props = {}) => {
-  const { heading, subheading, description, images, owner_id, category_id, created_at, tags, meta, icons } = props
+  const { heading, subheading, description, images, icons } = props
 
   return (
     <div className='mainArticle'>
       <Header title={heading} subtitle={subheading} />
       <Body description={description} />
-      <Footer images={images} owner_id={owner_id} category_id={category_id} created_at={created_at} tags={tags} meta={meta} icons={icons} />
+      <Footer images={images} icons={icons} />
     </div>
   )
 }

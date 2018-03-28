@@ -1,38 +1,26 @@
 import React from 'react'
+import avatar from '../../avatar.png'
+
+const ownImg = {
+  width: '30px',
+  borderRadius: '50px',
+  verticalAlign: 'middle'
+}
+const ownSpan = {
+  color: 'grey',
+  paddingLeft: '10px',
+  fontSize: '13px'
+}
 
 const Owner = (props = {}) => {
   const { ownId } = props
-  const avatar = 'https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/people5.jpg'
-  const ownStyle = {
-    paddingTop: '35px'
-  }
-  const ownImg = {
-    width: '50px',
-    borderRadius: '50px',
-    verticalAlign: 'middle'
-  }
-  const ownSpan = {
-    color: 'grey',
-    paddingLeft: '10px'
-  }
-  const ownReactions = {
-    float: 'right',
-    marginTop: '15px'
-  }
 
   return (
-    <div style={ownStyle}>
+    <div>
       <img alt={ownId} src={avatar} style={ownImg} />
       <span style={ownSpan}>
-        Own-id:
-        <strong id={ownId}> { ownId } </strong>
+        Lorem Ipsum
       </span>
-
-      <div style={ownReactions}>
-        <span style={ownSpan}>fire</span>
-        <span style={ownSpan}>paper</span>
-        <span style={ownSpan}>drop</span>
-      </div>
     </div>
   )
 }
