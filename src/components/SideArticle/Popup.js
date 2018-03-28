@@ -7,7 +7,7 @@ const Popup = (props = {}) => {
 
   return (
     <div className={`popup ${openClass}`} onClick={closePopup}>
-      <div className='popup_inner'>
+      <div className={`popup_inner ${openClass}`}>
         <div className='header'>
           <p className={`${openClass}`}>{heading}</p>
         </div>
