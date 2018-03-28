@@ -1,14 +1,18 @@
 import React from 'react'
 
+const headerStyle = {
+  textAlign: 'left'
+}
+const normal = {
+  fontWeight: 'normal'
+}
+
 const Header = (props = {}) => {
   const { title, subtitle } = props
-  const headerStyle = {
-    textAlign: 'left'
-  }
 
   return (
     <div style={headerStyle}>
-      <h2>{subtitle}</h2>
+      <h2 style={normal}>{subtitle}</h2>
       <h1>{title}</h1>
     </div>
   )

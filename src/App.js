@@ -49,7 +49,7 @@ class App extends Component {
     const { data = [] } = this.state
     const [first = {}, ...list] = data
     const appStyle = {
-      background: 'url(https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png) 0 110px',
+      background: 'url(https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png) 0 63px',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'contain',
       fontFamily: `'Roboto Slab', serif`
@@ -71,7 +71,16 @@ class App extends Component {
             : <div style={articlesStyle}>
               <MainArticle {...first} className='column' />
               <div>
-                {list.map(a => <SideArticle {...a} key={a.id} toggle={(id) => this.togglePopup(id)} className='column' />)}
+                {list.map(
+                  (a, index) =>
+                    <SideArticle
+                      {...a}
+                      key={a.id}
+                      toggle={(id) => this.togglePopup(id)}
+                      className='column'
+                      index={index}
+                    />
+                )}
               </div>
               <Popup
                 data={this.state.popupData}

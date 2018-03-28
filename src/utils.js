@@ -13,3 +13,9 @@ export function scrollMonitor (height, id) {
     el.classList.remove('over')
   }
 }
+
+export function pad2 (num) {
+  return (num < 10)
+    ? '0' + num
+    : num
+}

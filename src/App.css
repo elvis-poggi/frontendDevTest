@@ -1,5 +1,3 @@
-
-
 .popup {
   position: fixed;
   width: 100%;
@@ -9,7 +7,7 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgb(107, 107, 107);
+  background-color: rgba(107, 107, 107, 0.83);
   overflow: hidden;
 }
 .popup.open {
@@ -23,7 +21,7 @@
   bottom: 5%;
   margin: auto;
   border-radius: 15px; 
-  background: yellow;
+  background: #F8E627;
   overflow: hidden;
   opacity: 0;
   width: 10%;
@@ -60,7 +58,6 @@
 
 .popup_inner .header {
   font-size: 30px;
-  font-weight: bold;
   left: 180px;
   top: 170px;
   position: relative;
@@ -68,7 +65,7 @@
 
 .popup_inner .gallery {
   padding-left: 170px;
-  background: white;
+  background: #fff;
   overflow: hidden;
   border-radius: 15px;
   transition-property: height opacity;
@@ -96,13 +93,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: white;
+  background: #fff;
 }
 
 .navbar h1, h2{
   display: inline-block;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .navbar h1 {
@@ -111,7 +106,7 @@
 
 .navbar h2 {
   padding-left: 24px;
-  color: gray;
+  color: #919191e3;
 }
 
 .navbar .buttons {
@@ -166,7 +161,7 @@
 }
 
 .body span {
-  color: grey;  
+  color: #323232e3;  
 }
 
 
@@ -182,7 +177,7 @@
 #articles.over {
   width: 100%;
   border-radius: 0;
-  background: white;  
+  background: #fff;  
 }
 
 
