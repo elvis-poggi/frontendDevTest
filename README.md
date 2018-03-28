@@ -42,12 +42,14 @@ Your app is ready to be deployed!
 ### `npm run deploy`
 
 This command will:
-- create a Docker container following the specs inside the dockerfile
-- copy all the contents of the build folder inside the docker image
-- copy all the php files inside the docker image /var/www/html
+- Create a Docker container following the specs inside the dockerfile
+- Copy all the contents of the build folder inside the docker image
+- Copy all the php files inside the docker image /var/www/html
 
 ## Supported Browsers
 
 By default, the generated project uses the latest version of React.
 
 You can refer [to the React documentation](https://reactjs.org/docs/react-dom.html#browser-support) for more information about supported browsers.
+
+## `npm run build && npm run deploy` to see the app running
