@@ -35,7 +35,7 @@ class App extends Component {
 
     window.onscroll = () => {
       scrollMonitor(440, 'navbar')
-      scrollMonitor(580, 'articles')
+      scrollMonitor(530, 'articles')
     }
   }
 
