@@ -6,13 +6,12 @@ import { pad2 } from '../../utils.js'
 import Gallery from './Gallery'
 
 const bgNumStyle = {
-  color: '#ECDA1F',
-  fontSize: '200px',
-  marginTop: '-127px',
+  color: 'rgb(151, 139, 17, 0.44)',
+  fontSize: '182px',
+  marginTop: '-55px',
   float: 'left',
-  marginBottom: '-150px',
-  marginLeft: '-65px',
-  fontWeight: 'bold'
+  marginBottom: '-100px',
+  marginLeft: '-26px'
 }
 // const sideArticleStyle = {
 //   float: 'left',
@@ -67,7 +66,6 @@ const SideArticle = (props = {}) => {
     // >
   return (
     <div className={`popup_inner  ${c} sideArticle`} onClick={() => toggle(id)}>
-        otherOpen {anyOpen ? 1 : 0}
       <span className='bgNumStyle' style={bgNumStyle}>{pad2(index + 1)}</span>
       <Header className='header' title={heading} subtitle={subheading} />
       <Body className='body' description={description} />
