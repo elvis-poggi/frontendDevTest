@@ -1,7 +1,9 @@
 import React from 'react'
 
 const headerStyle = {
-  textAlign: 'left'
+  textAlign: 'left',
+  fontSize: '12px',
+  padding: '30px'
 }
 const normal = {
   fontWeight: 'normal'

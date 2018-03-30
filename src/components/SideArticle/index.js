@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from './Header'
 import Body from './Body'
-import { Parallax } from 'react-scroll-parallax'
+// import { Parallax } from 'react-scroll-parallax'
 import { pad2 } from '../../utils.js'
+import Gallery from './Gallery'
 
 const bgNumStyle = {
   color: '#ECDA1F',
@@ -13,23 +14,24 @@ const bgNumStyle = {
   marginLeft: '-65px',
   fontWeight: 'bold'
 }
-const sideArticleStyle = {
-  float: 'left',
-  width: '230px',
-  backgroundColor: 'yellow',
-  marginBottom: '100px',
-  borderRadius: '15px',
-  padding: '48px',
-  maxWidth: '333px',
-  textAlign: 'center',
-  overflow: 'hidden'
-}
+// const sideArticleStyle = {
+//   float: 'left',
+//   width: '230px',
+//   backgroundColor: 'yellow',
+//   marginBottom: '100px',
+//   borderRadius: '15px',
+//   padding: '48px',
+//   maxWidth: '333px',
+//   textAlign: 'center',
+//   overflow: 'hidden'
+// }
 const buttonStyle = {
   padding: '20px 60px',
-  backgroundColor: 'yellow',
+  backgroundColor: 'rgb(236, 218, 31)',
   border: 'solid 1px black',
   marginTop: '20px',
-  borderRadius: '5px',
+  marginBottom: '60px',
+  borderRadius: '10px',
   textTransform: 'uppercase',
   fontWeight: 'bold',
   fontSize: '16px'
@@ -40,26 +42,40 @@ const SideArticle = (props = {}) => {
     heading,
     subheading,
     description,
+    images,
     toggle,
     id,
-    index
+    index,
+    isOpen,
+    anyOpen
    } = props
-
+  const c = `${isOpen ? 'open' : 'closed'}`
+  // const o = `${isOpen ? 0 : 1}`
+  // const s = {
+  //   ...bgNumStyle,
+  //   opacity: o
+  // }
+  if (!isOpen && anyOpen) {
+    return null
+  }
+    // <Parallax
+    //   className={`${c}`}
+    //   offsetYMax='80px'
+    //   offsetYMin='-190px'
+    //   slowerScrollRate
+    //   disabled={isOpen}
+    // >
   return (
-    <Parallax
-      className='custom-class'
-      offsetYMax='80px'
-      offsetYMin='-190px'
-      slowerScrollRate
-    >
-      <div style={sideArticleStyle}>
-        <span style={bgNumStyle}>{pad2(index + 1)}</span>
-        <Header title={heading} subtitle={subheading} />
-        <Body description={description} />
-        <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
-      </div>
-    </Parallax>
+    <div className={`popup_inner  ${c} sideArticle`} onClick={() => toggle(id)}>
+        otherOpen {anyOpen ? 1 : 0}
+      <span className='bgNumStyle' style={bgNumStyle}>{pad2(index + 1)}</span>
+      <Header className='header' title={heading} subtitle={subheading} />
+      <Body className='body' description={description} />
+      <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
+      <Gallery images={images} />
+    </div>
   )
+  // </Parallax>
 }
 
 export default SideArticle

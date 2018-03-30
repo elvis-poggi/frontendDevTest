@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import MainArticle from './components/MainArticle/'
 import SideArticle from './components/SideArticle/'
-import Popup from './components/SideArticle/Popup'
 import Navbar from './components/Navbar'
 import { scrollMonitor } from './utils.js'
 
@@ -15,17 +14,12 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      showPopup: false
+      openArticle: false
     }
   }
   togglePopup (id) {
-    const {data} = this.state
-    const popupData = data.filter(
-      (row) => row.id === id
-    )[0]
     this.setState(state => ({
-      popupData,
-      showPopup: !state.showPopup
+      openArticle: state.openArticle === id ? false : id
     }))
   }
 
@@ -46,16 +40,16 @@ class App extends Component {
   }
 
   render () {
-    const { data = [] } = this.state
+    const { data = [], openArticle = false } = this.state
     const [first = {}, ...list] = data
     const appStyle = {
       background: 'url(https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png) 0 63px',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'contain',
-      fontFamily: `'Roboto Slab', serif`
+      fontFamily: `'Roboto', sans-serif`
     }
     const articlesStyle = {
-      width: '1280px',
+      width: '100%',
       margin: '0 auto',
       textAlign: 'left',
       backgroundColor: '#fff',
@@ -70,8 +64,11 @@ class App extends Component {
             ? <div>No Articles found.</div>
             : <div style={articlesStyle}>
               <MainArticle {...first} className='column' />
-              <div>
-                {list.map(
+            </div>
+          }
+        </div>
+        {(data.length) && <div className='sideArticleWrapper'>
+          {list.map(
                   (a, index) =>
                     <SideArticle
                       {...a}
@@ -79,17 +76,11 @@ class App extends Component {
                       toggle={(id) => this.togglePopup(id)}
                       className='column'
                       index={index}
+                      anyOpen={typeof openArticle !== 'boolean'}
+                      isOpen={openArticle === a.id}
                     />
                 )}
-              </div>
-              <Popup
-                data={this.state.popupData}
-                closePopup={() => this.togglePopup()}
-                isOpen={this.state.showPopup}
-                  />
-            </div>
-          }
-        </div>
+        </div>}
       </div>
     )
   }

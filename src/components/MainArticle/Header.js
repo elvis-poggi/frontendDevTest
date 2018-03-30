@@ -4,7 +4,11 @@ const headerStyle = {
   width: '641.25px'
 }
 const normal = {
-  fontWeight: 'normal'
+  fontWeight: 'normal',
+  paddingTop: '25px',
+  fontSize: '18px',
+  fontFamily: 'Open Sans, sans-serif'
+
 }
 
 const Header = (props = {}) => {
