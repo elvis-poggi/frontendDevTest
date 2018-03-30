@@ -13,17 +13,7 @@ const bgNumStyle = {
   marginBottom: '-100px',
   marginLeft: '-26px'
 }
-// const sideArticleStyle = {
-//   float: 'left',
-//   width: '230px',
-//   backgroundColor: 'yellow',
-//   marginBottom: '100px',
-//   borderRadius: '15px',
-//   padding: '48px',
-//   maxWidth: '333px',
-//   textAlign: 'center',
-//   overflow: 'hidden'
-// }
+
 const buttonStyle = {
   padding: '20px 60px',
   backgroundColor: 'rgb(236, 218, 31)',
@@ -49,31 +39,28 @@ const SideArticle = (props = {}) => {
     anyOpen
    } = props
   const c = `${isOpen ? 'open' : 'closed'}`
-  // const o = `${isOpen ? 0 : 1}`
-  // const s = {
-  //   ...bgNumStyle,
-  //   opacity: o
-  // }
+
   if (!isOpen && anyOpen) {
     return null
   }
+  console.log(isOpen)
+  return (
     // <Parallax
     //   className={`${c}`}
-    //   offsetYMax='80px'
+    //   offsetYMax='70px'
     //   offsetYMin='-190px'
     //   slowerScrollRate
     //   disabled={isOpen}
     // >
-  return (
-    <div className={`popup_inner  ${c} sideArticle`} onClick={() => toggle(id)}>
-      <span className='bgNumStyle' style={bgNumStyle}>{pad2(index + 1)}</span>
-      <Header className='header' title={heading} subtitle={subheading} />
-      <Body className='body' description={description} />
-      <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
-      <Gallery images={images} />
-    </div>
+    <div className={`popup_inner  ${c} sideArticle`} onClick={() => toggle(id)} >
+        <span className='bgNumStyle' style={bgNumStyle}>{pad2(index + 1)}</span>
+        <Header className='header' title={heading} subtitle={subheading} />
+        <Body className='body' description={description} />
+        <button onClick={() => toggle(id)} style={buttonStyle}> Clicca qui </button>
+        <Gallery images={images} />
+      </div>
+    // </Parallax>
   )
-  // </Parallax>
 }
 
 export default SideArticle

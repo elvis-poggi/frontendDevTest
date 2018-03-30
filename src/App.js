@@ -35,7 +35,7 @@ class App extends Component {
 
     window.onscroll = () => {
       scrollMonitor(440, 'navbar')
-      scrollMonitor(590, 'articles')
+      scrollMonitor(580, 'articles')
     }
   }
 
@@ -59,16 +59,17 @@ class App extends Component {
     return (
       <div style={appStyle}>
         <Navbar />
-        <div className='articlesWrapper' id='articles'>
-          {(!data.length)
+        <div className='wrapper'>
+          <div className='articlesWrapper' id='articles'>
+            {(!data.length)
             ? <div>No Articles found.</div>
             : <div style={articlesStyle}>
               <MainArticle {...first} className='column' />
             </div>
           }
-        </div>
-        {(data.length) && <div className='sideArticleWrapper'>
-          {list.map(
+          </div>
+          {(data.length) && <div className='sideArticleWrapper'>
+            {list.map(
                   (a, index) =>
                     <SideArticle
                       {...a}
@@ -80,7 +81,8 @@ class App extends Component {
                       isOpen={openArticle === a.id}
                     />
                 )}
-        </div>}
+          </div>}
+        </div>
       </div>
     )
   }

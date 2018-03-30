@@ -1,7 +1,7 @@
 import React from 'react'
 
 const headerStyle = {
-  width: '641.25px'
+  width: '65%'
 }
 const normalSub = {
   fontWeight: 'normal',
